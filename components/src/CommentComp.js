@@ -1,23 +1,19 @@
 import React from "react";
-import Faker from "faker";
 
-const CommentsComp = () => {
+const CommentsComp = props => {
   return (
     <div className="comment">
       <a href="/" className="avatar">
-        <img src={Faker.image.avatar()} alt="avatar" />
+        <img src={props.avatar} alt="avatar" />
       </a>
       <div className="content">
         <a href="/" className="author">
-          Tom Lukic
+          {props.name}
         </a>
         <div className="metadata">
-          <span className="date">Today at 6:00PM</span>
+          <span className="date">{props.timeAdded}</span>
         </div>
-        <div className="text">
-          This will be great for business reports. I will definitely download
-          this.
-        </div>
+        <div className="text">{props.comments}</div>
         <div className="actions">
           <a href="/" className="reply">
             Reply
